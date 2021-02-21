@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>RANDOM NUMBER GUESS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            html {font-family: sans-serif;}
+            body {
+                width: 50%;
+                max-width: 800px;
+                min-width: 480px;
+                margin: 0 auto;
+                background: plum;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Guess The Number</h1>
+        <p>WE HAVE TO SELECT A RANDOM NUMBER BETWEEN 1-10.
+        SEE IF YOU CAN GUESS IT.</p>
+        <div class="form">
+            <label for="guessfield">Enter a guess : </label>
+            <input type="text" id="guessfield" class="guessfield">
+            <input type="submit" id="submitguess"
+                   value="submit guess" class="submitguess">
+        </div>
+        <script type="text/javascript">
+            var y = Math.floor(Math.random()*10+1);
+            var guess=1;
+            document.getElementById("submitguess").onclick=function(){
+                var x=document.getElementById("guessfield").value;
+                if(x==y)
+                {
+                    alert("CONGRATULATIONS !!! YOU GUESSED IT RIGHT IN"+guess+"GUESS");
+                }
+               else if(x>y)
+                {
+                    guess++;
+                    alert("OOPS SORRY!! TRY A SMALLER NUMBER ");
+                }
+                else
+                {
+                    guess++;
+                    alert("OOPS sorry !! TRY A GREATER NUMBER");
+                }
+                
+            }
+        </script>
+        
+    </body>
+</html>
